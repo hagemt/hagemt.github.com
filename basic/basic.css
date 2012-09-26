@@ -1,0 +1,41 @@
+.function:before {
+	content: "function show_" attr(id) " {";
+	font-size: large;
+	font-style: normal;
+	font-weight: bold;
+}
+.function:after {
+	content: "}";
+	font-size: large;
+	font-style: normal;
+	font-weight: bold;
+}
+.comment {
+	font-style: italic;
+	font-variant: small-caps;
+	font-weight: lighter;
+}
+.comment:before {
+	content: "// ";
+}
+.command:before {
+	content: "teh@rpi:~$ ./bin/describe " attr(id);
+}
+div.command {
+	height: 100%; width: 640px;
+}
+div.block {
+	background-color: #ffffff; color: #000000;
+	border: 3px double #000000;
+	border-radius: 24px;
+	box-shadow: 10px 10px 5px #888888;
+	margin: 16px auto 32px 16px; padding: 16px;
+}
+span {
+	font-family: "Courier New", Courier, monospace;
+	margin: 8px; padding: 8px;
+}
+ul {
+	margin: 8px; padding-left: 32px;
+	list-style-type: lower-greek;
+}

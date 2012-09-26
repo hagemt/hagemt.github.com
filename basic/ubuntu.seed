@@ -1,0 +1,34 @@
+### Localization
+
+# Preseeding only locale sets language, country and locale.
+d-i debian-installer/locale string en_US
+
+# Keyboard selection.
+# Disable automatic (interactive) keymap detection.
+d-i console-setup/ask_detect boolean false
+d-i console-setup/layoutcode string us
+
+### Network configuration
+
+# netcfg will choose an interface that has link if possible. This makes it
+# skip displaying a list if there is more than one interface.
+d-i netcfg/choose_interface select auto
+d-i netcfg/dhcp_timeout string 60
+
+# Any hostname and domain names assigned from dhcp take precedence over
+# values set here. However, setting the values still prevents the questions
+# from being shown, even if values come from dhcp.
+d-i netcfg/get_hostname string aphrodite
+d-i netcfg/get_domain string rpi.edu
+
+# Disable that annoying WEP key dialog.
+d-i netcfg/wireless_wep string
+
+### Network console
+
+# Use the following settings if you wish to make use of the network-console
+# component for remote installation over SSH. This only makes sense if you
+# intend to perform the remainder of the installation manually.
+d-i anna/choose_modules string network-console
+d-i network-console/password password marill
+d-i network-console/password-again password marill
